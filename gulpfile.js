@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    util = require('gulp-util');
 
 var paths = {
   styles: ['src/styles/horn.less'],
@@ -9,14 +10,15 @@ var paths = {
 };
 
 gulp.task('styles', function () {
-  return
-    gulp.src(paths.styles)
-      .pipe(less())
-      .pipe(gulp.dest('src/styles'))
+  gulp.src(paths.styles)
+    .pipe(less())
+    .pipe(gulp.dest('src/styles'))
 });
 
 gulp.task('watch', function () {
   gulp.watch('src/styles/*.less', ['styles']);
+  gulp.watch(paths.services, ['build']);
+  gulp.watch(paths.directives, ['build']);
 });
 
 gulp.task('build', function () {
@@ -29,4 +31,4 @@ gulp.task('build', function () {
     .pipe(gulp.dest('src/scripts'));
 });
 
-gulp.task('default', ['styles', 'watch']);
+gulp.task('default', ['styles', 'build', 'watch']);
