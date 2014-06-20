@@ -9,8 +9,9 @@
   "author": "eden lane <edencore@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "~3.6.2",
+    "gulp": "~3.8.1",
     "gulp-concat": "^2.2.0",
-    "gulp-less": "~1.2.3"
+    "gulp-less": "~1.2.3",
+    "gulp-util": "^2.2.17"
   }
 }
