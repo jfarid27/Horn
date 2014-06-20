@@ -4,7 +4,8 @@ var gulp = require('gulp'),
 
 var paths = {
   styles: ['src/styles/horn.less'],
-  services: ['src/scripts/services/*.js']
+  services: ['src/scripts/services/*.js'],
+  directives: ['src/scripts/directives/*.js']
 };
 
 gulp.task('styles', function () {
@@ -21,6 +22,10 @@ gulp.task('watch', function () {
 gulp.task('build', function () {
   gulp.src(paths.services)
     .pipe(concat('services.js'))
+    .pipe(gulp.dest('src/scripts'));
+
+  gulp.src(paths.directives)
+    .pipe(concat('directives.js'))
     .pipe(gulp.dest('src/scripts'));
 });
 

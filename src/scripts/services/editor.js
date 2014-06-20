@@ -4,7 +4,7 @@
  */
 (function () {
   angular
-    .module("Horn", [])
+    .module("Horn")
     .factory('editor', ['$rootScope', function ($rootScope) {
       var mode = 'markdown',
           switchingTabs = false,
