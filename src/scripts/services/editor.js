@@ -61,6 +61,8 @@
           current = tabs[number];
           switchingTabs = true;
           cm.setValue(current.body || "");
+
+          openFileDialog.files = [{name: 'title'}];
         },
 
         isMode: function (name) {

@@ -1,3 +1,23 @@
+
+(function () {
+   angular
+     .module("Horn")
+     .directive('openFileDialog', ['$scope', function () {
+        return {
+          restrict: 'E',
+          templateUrl: 'partial/openFileDialog.html',
+          transclude: true,
+          link: function ($scope, element, attrs) {
+
+          },
+          controller: function ($scope) {
+            $scope.isVisible = true;
+            $scope.files = [];
+          }
+        };
+      }]);
+})();
+
 /**
  * Directive for representing content of current tab
  */
@@ -20,7 +40,7 @@
 (function () {
   angular
     .module("Horn")
-    .directive('toolbar', ['editor', function (editor) {
+    .directive('toolbar', ['editor', 'openFileDialog', function (editor, openFileDialog) {
       return {
         restrict: 'E',
         templateUrl: 'partial/toolbar.html',

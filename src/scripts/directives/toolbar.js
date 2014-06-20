@@ -1,7 +1,7 @@
 (function () {
   angular
     .module("Horn")
-    .directive('toolbar', ['editor', function (editor) {
+    .directive('toolbar', ['editor', 'openFileDialog', function (editor, openFileDialog) {
       return {
         restrict: 'E',
         templateUrl: 'partial/toolbar.html',
