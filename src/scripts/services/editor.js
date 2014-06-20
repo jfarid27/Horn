@@ -67,6 +67,10 @@
           return mode === name;
         },
 
+        isCurrent: function (tab) {
+          return tab == current;
+        },
+
         render: function () {
           this.renderedText = marked(cm.getValue());
         },

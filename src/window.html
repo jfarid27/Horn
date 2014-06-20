@@ -27,7 +27,7 @@
 
 </head>
 <body ng-controller="HornController">
-  <div class="tab" ng-repeat="tab in editor.tabs" ng-click="editor.setTab($index)">
+  <div class="tab" ng-repeat="tab in editor.tabs" ng-click="editor.setTab($index)" ng-class="{active: editor.isCurrent(tab)}">
     {{tab.name}}
     <span class="is-saved" ng-hide="tab.isSaved">●</span>
     <a href="" class="icon-close"></a>

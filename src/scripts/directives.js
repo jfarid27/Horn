@@ -16,6 +16,7 @@
         };
       }]);
 })();
+
 (function () {
   angular
     .module("Horn")
@@ -40,6 +41,7 @@
       };
     }]);
 })();
+
 (function () {
   angular
     .module('Horn')

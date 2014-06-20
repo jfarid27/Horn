@@ -36,10 +36,6 @@ header {
   height: 100%;
 }
 
-.content, .CodeMirror, .preview {
-
-}
-
 .content {
   height: 100vh;
 }
@@ -61,7 +57,7 @@ header {
 }
 
 .tab {
-  background: @tab-normal-color;
+  background: lighten(@tab-normal-color, 30%);
   padding: 3px 7px;
   display: inline-block;
   border-width: 1px 1px 0px 1px;
@@ -69,4 +65,10 @@ header {
   border-style: solid;
   border-radius: 3px 3px 0px 0;
   color: @tab-font-color;
+
+  &.active {
+     background: @tab-normal-color;
+  }
 }
+
+
